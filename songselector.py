@@ -132,9 +132,9 @@ class SongSelector:
         self.selected_index = -1
         self.anim = 0
         self.play_button_rect = pygame.Rect(Config.SCREEN_WIDTH - 300, 150, 250, 100)
-        self.play_button_text = get_font("./assets/poppins-regular.ttf", 48).render("Play", True, (0, 0, 0))
+        self.play_button_text = get_font("./assets/poppins-regular.ttf", 48).render("开始游戏", True, (0, 0, 0))
         self.back_button_rect = pygame.Rect(Config.SCREEN_WIDTH - 300, 20, 250, 150 - 40)
-        self.back_button_text = get_font("./assets/poppins-regular.ttf", 48).render("Back", True, (0, 0, 0))
+        self.back_button_text = get_font("./assets/poppins-regular.ttf", 48).render("返回", True, (0, 0, 0))
 
     def reload_songs(self):
         self.songs = []
