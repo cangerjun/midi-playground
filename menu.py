@@ -22,7 +22,7 @@ class MenuOption:
         self.hover_anim: float = 0
 
         # this type of graphics programming is hands down the most boring thing i've ever done
-        font = get_font("./assets/poppins-regular.ttf", Config.SCREEN_HEIGHT//15)
+        font = get_font("./assets/hanyisongjian.ttf", Config.SCREEN_HEIGHT//15)
         title_surface = font.render(title, True, color.lerp((0, 0, 0), 0.7))
         brighter_title_surface = font.render(title, True, color.lerp((0, 0, 0), 0.2))
         shadow_surface = pygame.Surface((brighter_title_surface.get_rect().width + 100, MenuOption.HEIGHT), pygame.SRCALPHA)
@@ -54,19 +54,21 @@ class MenuOption:
 class Menu:
     def __init__(self):
         self.menu_options: list[MenuOption] = [
-            MenuOption("Play", pygame.Color(214, 247, 163)),
-            MenuOption("Config", pygame.Color(196, 255, 178)),
-            MenuOption("Contribute", pygame.Color(183, 227, 204)),
-            MenuOption("Open Songs Folder", pygame.Color(125, 130, 184)),
-            MenuOption("Quit", pygame.Color(226, 109, 92))
+            MenuOption("开始游戏", pygame.Color(214, 247, 163)),
+            MenuOption("设置", pygame.Color(196, 255, 178)),
+            MenuOption("贡献", pygame.Color(183, 227, 204)),
+            MenuOption("打开歌曲文件", pygame.Color(125, 130, 184)),
+            MenuOption("退出", pygame.Color(226, 109, 92))
         ]
         self.anim = 1
         # note that there are spaces after each line of code in the marquee text
-        self.marquee_text = """Contributors: quasar098, TheCodingCrafter, PurpleJuiceBox, sled45, Times0. Just want to 
-watch the square and don't want to play the game? Turn on theatre mode in the config if that is the case. Interested in playing your 
-own song but don't know how? Check out docs/SONGS.md in the source code to learn how to add your own songs.""".replace("\n", '')
-        self.title_surf = get_font("./assets/poppins-regular.ttf", 72).render("midi-playground", True, get_colors()["hallway"])
-        self.marquee_surf = get_font("./assets/poppins-regular.ttf", 24).render(self.marquee_text, True, get_colors()["hallway"])
+        self.marquee_text = """贡献者: quasar098, TheCodingCrafter, PurpleJuiceBox, sled45, Times0. 快来加入我们！ 
+想要看着方块自己动，不想玩游戏？
+如果是这样，请在设置中打开剧场模式。
+想要播放自己喜欢的歌曲，但不知道如何播放？
+查看文件夹中的docs/SONGS.md，了解如何添加自己喜欢的歌曲。""".replace("\n", '')
+        self.title_surf = get_font("./assets/hanyisongjian.ttf", 72).render("midi游乐场", True, get_colors()["hallway"])
+        self.marquee_surf = get_font("./assets/hanyisongjian.ttf", 24).render(self.marquee_text, True, get_colors()["hallway"])
         self.prev_active = True
         self.active = True
         self.square = Square(100, 320)
@@ -88,8 +90,8 @@ own song but don't know how? Check out docs/SONGS.md in the source code to learn
             return
 
         if self.active and not self.prev_active:
-            self.title_surf = get_font("./assets/poppins-regular.ttf", 72).render("midi-playground", True, get_colors()["hallway"])
-            self.marquee_surf = get_font("./assets/poppins-regular.ttf", 24).render(self.marquee_text, True, get_colors()["hallway"])
+            self.title_surf = get_font("./assets/hanyisongjian.ttf", 72).render("midi-playground", True, get_colors()["hallway"])
+            self.marquee_surf = get_font("./assets/hanyisongjian.ttf", 24).render(self.marquee_text, True, get_colors()["hallway"])
         self.prev_active = self.active
 
         # interesting here
