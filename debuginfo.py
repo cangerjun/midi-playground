@@ -6,7 +6,7 @@ import sys
 from platform import system
 
 
-# noinspection PyBroadException
+# 抑制 PyBroadException 警告，避免 IDE 对此行代码发出警告
 def print_debug_info():
     debug_info = ""
     debug_info += f"Debug information:\n"

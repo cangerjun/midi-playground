@@ -9,35 +9,46 @@ import pygame
 
 
 class World:
-    """it's a cruel world out there"""
+    """这是一个残酷的世界"""
 
     def __init__(self):
+        # 初始化未来和过去反弹的列表
         self.future_bounces: list[Bounce] = []
         self.past_bounces: list[Bounce] = []
+        # 初始化开始时间和当前时间
         self.start_time = 0
         self.time = 0
+        # 初始化矩形列表、碰撞时间列表和粒子列表
         self.rectangles: list[pygame.Rect] = []
         self.collision_times: list[float] = []
         self.particles: list[Particle] = []
+        # 初始化时间戳列表
         self.timestamps = []
+        # 初始化方块对象
         self.square = Square()
+        # 初始化计分器对象
         self.scorekeeper = Scorekeeper(self)
+        # 初始化颜色列表
         self.colors = []           
 
     def update_time(self) -> None:
+        # 更新当前时间
         self.time = get_current_time() - self.start_time
 
     def get_next_bounce(self) -> Bounce:
         """Also pops the bounce from the future_bounces list"""
+        # 获取下一个反弹，并将其从未来反弹列表中移除，添加到过去反弹列表中
         self.past_bounces.append(self.future_bounces.pop(0))
         return self.past_bounces[-1]
 
     def add_bounce_particles(self, sp: list[float], sd: list[float]):
+        # 添加反弹粒子
         for _ in range(Config.particle_amount):
             new = Particle([sp[0]+random.randint(-10, 10), sp[1]+random.randint(-10, 10)], sd)
             self.particles.append(new)
 
     def handle_bouncing(self, square: Square):
+        # 处理反弹
         if len(self.future_bounces):
             if (self.time * 1000 + Config.music_offset)/1000 > self.future_bounces[0].time:
                 current_bounce = self.get_next_bounce()
@@ -52,16 +63,17 @@ class World:
                 if Config.do_particles_on_bounce:
                     self.add_bounce_particles(square.pos, changed)
 
-                # stop square at end
+                # 停止方块在终点
                 if len(self.future_bounces) == 0:
                     square.dir = [0, 0]
                     square.pos = current_bounce.square_pos
 
     def handle_keypress(self, time_from_start, misses):
+        # 处理按键按下
         return self.scorekeeper.do_keypress(time_from_start, misses)
 
     def gen_future_bounces(self, _start_notes: list[tuple[int, int, int]], percent_update_callback):
-        """Recursive solution may be necessary"""
+        """递归解决方案可能是必要的"""
         total_notes = len(_start_notes)
         max_percent = 0
         path = []
@@ -90,22 +102,21 @@ class World:
             all_bounce_rects = [_bounc.get_collision_rect() for _bounc in bounces_so_far]
             if len(notes) == 0:
                 return bounces_so_far
-            # print(depth * 100 // total_notes)
-            path_segment_start = len(path)
+            # 路径段开始
             start_rect = square.rect.copy()
             while True:
                 t += 1/FRAMERATE
                 square.reg_move(False)
                 path.append(square.rect)
                 if t > notes[0]:
-                    # no collision (we good)
+                    # 没有碰撞（一切正常）
                     bounce_indexes = prev_index_priority
 
-                    # randomly change direction every X% of the time
+                    # 随机改变方向
                     if random.random() * 100 < Config.direction_change_chance:
                         bounce_indexes = list(bounce_indexes.__reversed__())
 
-                    # add safe area
+                    # 添加安全区域
                     safe_areas.append(start_rect.union(square.rect))
 
                     for direction_to_bounce in bounce_indexes:
@@ -127,7 +138,7 @@ class World:
                             bounces_so_far = bounces_so_far[:-1]
                             square.dir[direction_to_bounce] *= -1
 
-                            # instead of trying other path from here, just exit a bit back to try another from previous
+                            # 退回到上一个路径段，尝试其他路径
                             if force_return:
                                 force_return -= 1
                                 while len(path) != path_segment_start:
@@ -175,7 +186,7 @@ class World:
 
         percent_update_callback("Removing overlapping safe areas")
 
-        # eliminate fully overlapping safe areas
+        # 消除完全重叠的安全区域
         safe_areas: list[pygame.Rect]
         while True:
             new = []
@@ -197,6 +208,6 @@ class World:
         self.rectangles = [_fb.get_collision_rect() for _fb in self.future_bounces]
         self.collision_times = [_fb.time for _fb in self.future_bounces]
         
-        # Setting random colors for the generated pegs
+        # 为生成的障碍设置随机颜色
         self.colors = [random.choice([(224, 50, 50), (80, 210, 100), (230, 220, 50), (174, 170, 210), (245, 77, 247), (255, 153, 0)]) for _ in self.future_bounces]
         return safe_areas

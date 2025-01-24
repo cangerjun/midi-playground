@@ -31,7 +31,7 @@ class ConfigPage:
             }}
             """
 
-        # pygame_gui stuff
+        # pygame_gui 相关内容
         self.ui_manager = pgui.UIManager((Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT), StringIO(pgui_theme))
         self.back_button = pgui.elements.UIButton(
             relative_rect=pygame.Rect((Config.SCREEN_WIDTH - 120, 30, 90, 30)),
@@ -39,7 +39,7 @@ class ConfigPage:
             manager=self.ui_manager
         )
 
-        # all attributes matching /s_.+/ are "s"ettings
+        # 所有匹配正则表达式 /s_.+/ 的属性均为 "设置" 属性
 
         self.s_camera_mode = pgui.elements.UIDropDownMenu(
             ["Center", "Lazy", "Smoothed (Default)", "Predictive"],
@@ -151,7 +151,7 @@ class ConfigPage:
             manager=self.ui_manager
         )
 
-        # audio and general settings
+        # 音频和常规设置
 
         self.s_game_volume = pgui.elements.UIHorizontalSlider(
             relative_rect=pygame.Rect((Config.SCREEN_WIDTH * 5 / 10, Config.SCREEN_HEIGHT // 10, 300, 30)),
@@ -249,7 +249,7 @@ class ConfigPage:
             manager=self.ui_manager
         )
 
-        # reset button
+        # 重置按钮
 
         self.s_reset_button = pgui.elements.UIButton(
             relative_rect=pygame.Rect((Config.SCREEN_WIDTH - 330, Config.SCREEN_HEIGHT - 60, 300, 30)),
@@ -271,8 +271,8 @@ class ConfigPage:
                 play_sound("wood.wav")
                 return True
             if event.ui_element == self.s_reset_button:
-                # todo: rework this
-                # todo: this does not work with translation stuffs
+                # 待办：重构此部分
+                # 待办：此部分与翻译功能不兼容
 
                 Config.theme = "dark"
                 self.s_color_theme.selected_option = "dark"
@@ -354,7 +354,7 @@ class ConfigPage:
         if event.type == pgui.UI_DROP_DOWN_MENU_CHANGED:
             play_sound("wood.wav")
             if event.ui_element == self.s_camera_mode:
-                Config.camera_mode = "CLSP".index(event.text[0])  # awful way of doing this lol
+                Config.camera_mode = "CLSP".index(event.text[0])  # 这种做法不太好，哈哈
             if event.ui_element == self.s_color_theme:
                 Config.theme = event.text
             if event.ui_element == self.s_theatre_mode:
@@ -415,7 +415,7 @@ class ConfigPage:
     def draw(self, screen: pygame.Surface):
         if not self.active:
             return
-        self.ui_manager.update(1 / FRAMERATE)  # supposed to use dt but whatever
+        self.ui_manager.update(1 / FRAMERATE)  # 本应使用 dt，但算了
         self.ui_manager.draw_ui(screen)
 
         screen.blit(self.made_with_pgui_surf, self.made_with_pgui_rect)

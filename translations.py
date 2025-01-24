@@ -58,63 +58,26 @@ Quer apenas assistir ao quadrado e não quer jogar o jogo? Se for esse o caso, a
 mas não sabe como? Consulte docs/SONGS.md no código-fonte para saber como adicionar suas próprias músicas.""".replace(
             "\n", ''),
 
-        "do-custom-pgui-font": False,
-        "camera-mode": "Modo câmera",
-        "rng-seed": "Semente RNG",
-        "starting-time-delay": "Atraso inicial",
-        "max-notes-to-generate": "Máx. de notas a gerar",
-        "bounce-min-spacing": "Espaçamento mínimo do salto",
-        "square-speed": "Velocidade do quadrado",
-        "music-offset": "Deslocamento da música",
-        "change-dir-chance": "Chance de mudar de direção",
-        "hp-drain-rate": "Taxa de drenagem de HP",
-        "music-volume": "Volume da música",
-        "color-theme": "Tema de cores",
-        "theatre-mode": "Modo teatro",
-        "particle-trail": "Rastro de partículas",
-        "shader": "Shader",
-        "color-pegs-on-bounce": "Pinos coloridos no salto",
-        "particles-on-bounce": "Partículas no salto",
-        "resolution": "Resolução",
-
         "restart-required": "Reinicialização Necessária"
     },
     "spanish": {
         "font": "poppins-regular.ttf",
-    
+
         "font-menu-shadow-offset": 9,
         "font-menu-shadow-length-offset": 0,
         "play": "Jugar",
-        "config": "Configuración",
+        "config": "Configuraciones",
         "contribute": "Contribuir",
-        "open-songs-folder": "Abrir Carpeta de Canciones",
+        "open-songs-folder": "Carpeta de Músicas",
         "quit": "Salir",
-    
+
         "back": "Volver",
         "title": "midi-playground",
         "title-marquee": f"""Colaboradores: {contributors}. 
-    ¿Solo quieres ver el cuadrado y no quieres jugar? Si es así, activa el Modo Teatro en la configuración. ¿Interesado en agregar tu propia canción pero no sabes cómo? Consulta docs/SONGS.md en el código fuente para aprender a añadir tus propias canciones.""".replace(
+¿Sólo quieres ver el cuadrado y no jugar el juego? Si es así, activa el Modo Teatro en los ajustes. 
+¿Te interesa añadir tu propia música pero no sabes cómo? Consulta docs/SONGS.md en el código fuente para saber cómo puedes poner tu propia música.""".replace(
             "\n", ''),
-    
-        "do-custom-pgui-font": False,
-        "camera-mode": "Modo cámara",
-        "rng-seed": "Semilla RNG",
-        "starting-time-delay": "Retraso inicial",
-        "max-notes-to-generate": "Máx. de notas a generar",
-        "bounce-min-spacing": "Espaciado mínimo de rebote",
-        "square-speed": "Velocidad del cuadrado",
-        "music-offset": "Desfase de la música",
-        "change-dir-chance": "Probabilidad de cambiar de dirección",
-        "hp-drain-rate": "Tasa de drenaje de HP",
-        "music-volume": "Volumen de la música",
-        "color-theme": "Tema de colores",
-        "theatre-mode": "Modo teatro",
-        "particle-trail": "Estela de partículas",
-        "shader": "Shader",
-        "color-pegs-on-bounce": "Pernos de color en el rebote",
-        "particles-on-bounce": "Partículas en el rebote",
-        "resolution": "Resolución",
-    
+
         "restart-required": "Reinicio Necesario"
     },
     "chinese": {
@@ -244,64 +207,9 @@ Kolla docs/SONGS.md i källkoden för att lära dig hur du lägger till dina egn
 
         "back": "Indietro",
         "title": "midi-playground",
-        "title-marquee": f"""Contributori: {contributors}. Vuoi vedere il quadrato senza giocare al gioco? Ti basta accendere la modalità "Modalità teatro" nelle impostazioni. Sei interessato a suonare le tue canzoni ma non sai come? Dai un' occhiata a docs/SONGS.md nel codice sorgente per scoprire come aggiungere le tue canzoni.""",
-
-        "do-custom-pgui-font": False,
-        "camera-mode": "Modalità videocamera",
-        "rng-seed": "Seme RNG",
-        "starting-time-delay": "Inizio ritardato",
-        "max-notes-to-generate": "Massimo note da generare",
-        "bounce-min-spacing": "Minima distanza di rimbalzo",
-        "square-speed": "Velocità del quadrato",
-        "music-offset": "Offset musica",
-        "change-dir-chance": "Probabilità cambio direzione",
-        "hp-drain-rate": "Velocità di drenaggio degli HP",
-        "music-volume": "Volume musica",
-        "color-theme": "Tema colori",
-        "theatre-mode": "Modalità teatro",
-        "particle-trail": "Scia di particelle",
-        "shader": "Shader",
-        "color-pegs-on-bounce": "Punti colorati quando rimbalzi",
-        "particles-on-bounce": "Particelle quando rimbalzi",
-        "resolution": "Risoluzione",
+        "title-marquee": f"""Contributori: {contributors}. Vuoi vedere il quadrato senza giocare al gioco? Ti basta accendere la modalità "Theatre Mode" nelle impostazioni. Sei interessato a suonare le tue canzoni ma non sai come? Dai un' occhiata a docs/SONGS.md nel codice sorgente per scoprire come aggiungere le tue canzoni.""",
 
         "restart-required": "Riavvio richiesto"
-    },
-    "ladin": {
-        "font": "poppins-regular.ttf",
-
-        "font-menu-shadow-offset": 9,
-        "font-menu-shadow-length-offset": 0,
-        "play": "Soga",
-        "config": "Impostaziuns",
-        "contribute": "Contribuësca",
-        "open-songs-folder": "Deura mapa cianties",
-        "quit": "Vá fora",
-
-        "back": "Zoruch",
-        "title": "midi-playground",
-        "title-marquee": f"""Contribuënc: {contributors}. Os udëi le quadrat zënza soghé al jüch? Al te basta impié la modalité "Modalité teater" tles impostaziuns. Sce t'es interessé a fa jì les tües cianties mo ne sas nia cô? Spo ciara a docs/SONGS.md tl codesc pur savëi sciöche ciafè fora cô mët ite les tües cianties.""",
-
-        "do-custom-pgui-font": False,
-        "camera-mode": "Modalité videocamera",
-        "rng-seed": "Somënza RNG",
-        "starting-time-delay": "Mët man plö tert",
-        "max-notes-to-generate": "Notes mascimes da generè",
-        "bounce-min-spacing": "Distanza minima de rembalz",
-        "square-speed": "Velocité dl quadrat",
-        "music-offset": "Offset musiga",
-        "change-dir-chance": "Probabilité mudamënt direziun",
-        "hp-drain-rate": "Velocité de  drenaje di HP",
-        "music-volume": "Volum musica",
-        "color-theme": "Tema corusc",
-        "theatre-mode": "Modalité teater",
-        "particle-trail": "Linia de particoles",
-        "shader": "Shader",
-        "color-pegs-on-bounce": "Punc coloris canche rembalzes",
-        "particles-on-bounce": "Particoles canche rembalzes",
-        "resolution": "Ressoluziun",
-
-        "restart-required": "Te mësses destodé y impié le jüch",
     },
     "japanese": {
         "font": "NotoSansJP-Regular.ttf",
@@ -316,26 +224,26 @@ Kolla docs/SONGS.md i källkoden för att lära dig hur du lägger till dina egn
 
         "back": "戻る",
         "title": "midi-playground",
-        "title-marquee": f"""貢献者: {contributors}. ブロックを見ているだけじゃつまらないからゲームをプレイしてみたい？設定でシアターモードをオンにしてみてください。自分の曲を演奏したいけどやり方がわからない？ソースコードのdocs/SONGS.mdを見れば、自分の曲を追加する方法が分かります。""".replace(
+        "title-marquee": f"""貢献者: {contributors}. 正方形を見ているだけじゃつまらないからゲームをプレイしてみたい？設定でシアターモードをオンにしてみてください。自分の曲を演奏したいけどやり方がわからない？ソースコードのdocs/SONGS.mdを見れば、自分の曲を追加する方法が分かります。""".replace(
             "\n", ''),
         
         "do-custom-pgui-font": True,
-        "camera-mode": "カメラのモード",
-        "rng-seed": "乱数の初期値",
-        "starting-time-delay": "ゲーム開始時の遅延",
-        "max-notes-to-generate": "生成するノーツの最大数",
-        "bounce-min-spacing": "バウンドの最小間隔",
-        "square-speed": "ブロックの速度",
-        "music-offset": "音楽のオフセット",
-        "change-dir-chance": "方向転換の確率",
-        "hp-drain-rate": "HPの減少率",
+        "camera-mode": "カメラモデル",
+        "rng-seed": "ランダム粒子数",
+        "starting-time-delay": "起動時間遅延",
+        "max-notes-to-generate": "音符最大生成数",
+        "bounce-min-spacing": "バウンドの最小間隔時間",
+        "square-speed": "ブロック速度",
+        "music-offset": "音楽オフセット",
+        "change-dir-chance": "方向を変える確率",
+        "hp-drain-rate": "HHPの減衰速度",
         "music-volume": "音楽の音量",
         "color-theme": "カラーテーマ",
         "theatre-mode": "シアターモード",
-        "particle-trail": "移動のエフェクト",
-        "shader": "シェーダー",
-        "color-pegs-on-bounce": "バウンド時のカラー表示",
-        "particles-on-bounce": "バウンド時のエフェクト表示",
+        "particle-trail": "粒子の軌跡",
+        "shader": "シェーダしぇーだ",
+        "color-pegs-on-bounce": "バウンス時のカラー釘", #ここで中国人のために記入するのは必ずしも正確ではありません。日本のネットユーザーは中国語を参照して適切に修正してください。
+        "particles-on-bounce": "バウンス粒子",
         "resolution": "解像度",
         "restart-required": "再起動が必要です"
     },
